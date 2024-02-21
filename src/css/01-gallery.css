@@ -23,6 +23,9 @@
 .gallery__image:hover {
   transform: scale(1.03);
 }
+ul{
+  list-style: none;
+}
 
 .gallery__image {
   height: 100%;
