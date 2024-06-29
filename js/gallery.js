@@ -69,11 +69,22 @@ const items = images.map(image => {
 });
 
 gallery.addEventListener("click", function(event) {
-  if (event.target.classList.contains("gallery-image")) {
-    const imgUrl = event.target.dataset.source; //pobieramy data-source
+  if (event.target.classList.contains("gallery-image")||event.target.nodeName==="IMG") {
+    event.preventDefault();
+    const imgUrl = event.target.dataset.source;//pobieramy data-source
+    
     console.log('Link do dużego obrazu:', imgUrl);
+    const instance = basicLightbox.create(`<img src="${imgUrl}">`);
+    instance.show();
+  const onKeydown = function(event) {
+          if (event.key === "Escape") {
+            instance.close();
+            document.removeEventListener("keydown", onKeydown);
+          }
+        };
 
-  }
-});
+        document.addEventListener("keydown", onKeydown);
+      }
+    });
 
-gallery.append(...items);
+    gallery.append(...items);
