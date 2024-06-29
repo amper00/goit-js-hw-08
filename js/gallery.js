@@ -68,4 +68,12 @@ const items = images.map(image => {
   return li;
 });
 
+gallery.addEventListener("click", function(event) {
+  if (event.target.classList.contains("gallery-image")) {
+    const imgUrl = event.target.dataset.source; //pobieramy data-source
+    console.log('Link do dużego obrazu:', imgUrl);
+
+  }
+});
+
 gallery.append(...items);

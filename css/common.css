@@ -6,22 +6,27 @@ body {
     align-items: center;
     height: 100vh;
    
+   
 }
 
 .gallery {
+    max-width: 1440px;
+    width: 100%;
+list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  
+   
+    gap: 24px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+ 
+
 }
 
 .gallery-item {
-    flex: 1 0 30%;
-    margin :25px;
-    
-    
+   
 }
 
 
